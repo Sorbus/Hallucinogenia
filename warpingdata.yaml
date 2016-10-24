@@ -138,6 +138,12 @@ special:
     item7:
       <<: *move_up
       <<: *tiny
+    item8:
+      name: "Parasitic"
+      <<: *tiny
+    item9:
+      name: "Commensal"
+      <<: *tiny
   extreme:
     item1:
       name: "None"
@@ -162,6 +168,12 @@ special:
       <<: *low
     item8:
       name: "Hereditary"
+      <<: *low
+    item9:
+      name: "Parasitic"
+      <<: *low
+    item10:
+      name: "Commensal"
       <<: *low
 
 material:
@@ -562,34 +574,34 @@ theme:
       <<: *low
       subtable:
         item1:
-          name: "Scratch"
+          name: "Injury/Scratch"
           <<: *common
         item2:
-          name: "Scar"
+          name: "Injury/Scar"
           <<: *common
         item3:
-          name: "Break"
+          name: "Injury/Break"
           <<: *common
         item4:
-          name: "Scrape"
+          name: "Injury/Scrape"
           <<: *common
         item5:
-          name: "Bruise"
+          name: "Injury/Bruise"
           <<: *common
         item6:
-          name: "Gash"
+          name: "Injury/Gash"
           <<: *low
         item7:
-          name: "Loss"
+          name: "Injury/Loss"
           <<: *low
         item8:
-          name: "Amputation"
+          name: "Injury/Amputation"
           <<: *low
         item9:
-          name: "Replacement"
+          name: "Injury/Replacement"
           <<: *tiny
         item10:
-          name: "Graft"
+          name: "Injury/Graft"
           <<: *tiny
     item14:
       name: "Fragmented"
