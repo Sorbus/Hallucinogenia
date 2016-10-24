@@ -1,3 +1,51 @@
+config:
+  count: 4
+  rolls_default: &rolls_default
+    rolls: &rolls_default_count
+      minor: 1
+      moderate: 2
+      major: 3
+      extreme: 5
+    max:
+      minor: 10
+      moderate: 10
+      major: 10
+      extreme: 10
+
+  section:
+    mind:
+      # <<: *rolls_default
+      rolls:
+        minor: 1
+        moderate: 1
+        major: 1
+        extreme: 1
+      max:
+        minor: 10
+        moderate: 10
+        major: 10
+        extreme: 10
+    special:
+      rolls:
+        <<: *rolls_default_count
+      max:
+        minor: 1
+        moderate: 1
+        major: 2
+        extreme: 3
+      # <<: *rolls_default
+    material:
+      <<: *rolls_default
+    theme:
+      <<: *rolls_default
+    focus:
+      <<: *rolls_default
+  scales:
+    - minor
+    - moderate
+    - major
+    - extreme
+
 helpers:
   massive: &massive
     freq: 200

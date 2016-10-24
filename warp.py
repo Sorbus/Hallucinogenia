@@ -6,33 +6,33 @@ except ImportError:
     from yaml import Loader, Dumper
 
 def roll(dictionary, level):
-	answer = ''
-	for item in sections:
+	answer = '\n'
+	for item,value in dictionary.get("config").get("section").items():
 		answer += ('{}: '.format(item.capitalize()))
 		if item == 'mind':
 			answer += '{}.'.format(find_answer(dictionary,dictionary.get(item),level))
 		elif item == 'special':
 			c = 0
-			for i in range(0,rolls[level]):
+			for i in range(0,value.get("rolls").get(dictionary.get("config").get("scales")[args.intensity])):
 				text = find_answer(dictionary,dictionary.get(item),level)
 				if text != 'None':
 					if c != 0:
 						answer += ', '
 					answer += text
 					c += 1
-				if c == max_special[level]:
+				if c == value.get("max").get(dictionary.get("config").get("scales")[args.intensity]):
 					answer += '.'
 					break
-				elif i+1 < rolls[level]:
+				elif i+1 < value.get("rolls").get(dictionary.get("config").get("scales")[args.intensity]):
 					pass
-				elif c < max_special[level] and c > 0:
+				elif c < value.get("max").get(dictionary.get("config").get("scales")[args.intensity])and c > 0:
 					answer += '.'
-				elif i+1 == rolls[level] and c == 0:
+				elif i+1 == value.get("rolls").get(dictionary.get("config").get("scales")[args.intensity]) and c == 0:
 					answer += 'None.'
 		else:
-			for i in range(0,rolls[level]):
+			for i in range(0,value.get("rolls").get(dictionary.get("config").get("scales")[args.intensity])):
 				answer += find_answer(dictionary,dictionary.get(item),level)
-				if i+1 < rolls[level]:
+				if i+1 < value.get("rolls").get(dictionary.get("config").get("scales")[args.intensity]):
 					answer += ', '
 				else:
 					answer += '. '
@@ -52,7 +52,7 @@ def find_answer(raw_dict, dictionary, level=-1, sub=False):
 	elif level == -1 and sub:
 		d = sub
 	else:
-		d = dictionary.get(scales[level])
+		d = dictionary.get(raw_dict.get("config").get("scales")[level])
 	rand = random.randrange(0,get_count(d),1)
 	num = 0
 	for k,v in d.items():
@@ -77,7 +77,7 @@ def find_answer(raw_dict, dictionary, level=-1, sub=False):
 					return '{} ({})'.format(v.get('name'),subs)
 				else:
 					return v.get('name')
-			elif v.get('move') == 'up' and level < 3:
+			elif v.get('move') == 'up' and level < raw_dict.get('config').get('count'):
 				return find_answer(raw_dict,dictionary,level+1)
 			elif v.get('move') == 'down' and level > 0:
 				return find_answer(raw_dict,dictionary,level-1)
@@ -97,14 +97,12 @@ if __name__ == '__main__':
 
 	args = parser.parse_args()
 
-	# Move this somewhere cleaner
-	scales = 'minor', 'moderate', 'major', 'extreme'
-	rolls = 1, 2, 3, 5
-	sections = 'mind', 'special', 'material', 'theme', 'focus'
-	max_special = 1, 1, 2, 3
-
 	# Load database from the specified file
 	with open(args.database, 'r') as file:
 		raw_dict = yaml.load(file, Loader=Loader)
+
+	# print(raw_dict.get("config").get("scales")[1])
+	#for k,v in raw_dict.get("config").get("section").items():
+	#	print(k)
 
 	print(roll(raw_dict,args.intensity))
