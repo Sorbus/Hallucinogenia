@@ -1,1 +1,3 @@
 Hallucinogenia is a prompt generator for the magic system described [here](https://www.reddit.com/r/worldbuilding/comments/57ub0x/ive_been_suddenly_transported_to_your_world_with/d8w18d8/). At present it is not interactive. Support for command line flags to allow more control will be added at some point in the future.
+
+It is written for Python 3.5, and has not been tested on other versions. It will not will work on 2.x without modification.

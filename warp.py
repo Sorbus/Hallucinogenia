@@ -1,5 +1,4 @@
-import yaml, dpath.util as dpath
-import random
+import yaml, random
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
