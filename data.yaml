@@ -233,19 +233,20 @@ material:
       name: "Immaterial"
       <<: *common
     item3:
+      name: "Flesh"
       <<: *high
       subtable: &flesh_minor
         item1:
-          name: "Flesh/Skin"
+          name: "Skin"
           <<: *low
         item2:
-          name: "Flesh/Muscle"
+          name: "Muscle"
           <<: *low
         item3:
-          name: "Flesh/Bone"
+          name: "Bone"
           <<: *low
         item4:
-          name: "Flesh/Skin"
+          name: "Skin"
           <<: *low
     item4:
       name: "Chitin/Cosmetic"
@@ -264,50 +265,54 @@ material:
       name: "Immaterial"
       <<: *low
     item3:
+      name: "Flesh"
       <<: *common
       subtable: &flesh_moderate
         <<: *flesh_minor
         item5:
-          name: "Flesh/Hair"
+          name: "Hair"
           <<: *low
         item6:
-          name: "Flesh/Scales"
+          name: "Scales"
           <<: *low
     item4:
+      name: "Chitin"
       <<: *low
       subtable:
         item1:
-          name: "Chitin/Cosmetic"
+          name: "Cosmetic"
           <<: *common
         item2:
-          name: "Chitin/Armor"
+          name: "Armor"
           <<: *low
     item5:
+      name: "Plant"
       <<: *common
       subtable: &plant_moderate
         item1:
-          name: "Plant/Wood"
+          name: "Wood"
           <<: *common
         item2:
-          name: "Plant/Leafs"
+          name: "Leafs"
           <<: *common
         item3:
-          name: "Plant/General"
+          name: "General"
           <<: *common
     item8:
+      name: "Stone"
       <<: *common
       subtable: &stone_moderate
         item1:
-          name: "Stone/Raw"
+          name: "Raw"
           <<: *common
         item2:
-          name: "Stone/Broken"
+          name: "Broken"
           <<: *common
         item3:
-          name: "Stone/Polished"
+          name: "Polished"
           <<: *common
         item4:
-          name: "Stone/Pebbles"
+          name: "Pebbles"
           <<: *common
     item9:
       <<: *move_up
@@ -317,22 +322,24 @@ material:
       <<: *move_down
       <<: *high
     item2:
+      name: "Flesh"
       <<: *common
       subtable: &flesh_major
         <<: *flesh_moderate
         item7:
-          name: "Flesh/Eyes"
+          name: "Eyes"
           <<: *low
         item8:
-          name: "Flesh/Mouths"
+          name: "Mouths"
           <<: *low
         item9:
-          name: "Flesh/Blood"
+          name: "Blood"
           <<: *low
         item10:
-          name: "Flesh/Membrane"
+          name: "Membrane"
           <<: *low
     item3:
+      name: "Hot"
       <<: *low
       subtable: &hot_major
         item1:
@@ -351,6 +358,7 @@ material:
           name: "Gas"
           <<: *tiny
     item4:
+      name: "Cold"
       <<: *low
       subtable: &cold_major
         item1:
@@ -369,6 +377,7 @@ material:
           name: "Gas"
           <<: *tiny
     item5:
+      name: "Vapor"
       <<: *low
       subtable: &vapor_major
         item1:
@@ -394,21 +403,23 @@ material:
       name: "Geode"
       <<: *low
     item3:
+      name: "Flesh"
       <<: *low
       subtable:
         item1:
-          name: "Fiber/Hair"
+          name: "Hair"
           <<: *common
         item2:
-          name: "Fiber/Thread"
+          name: "Thread"
           <<: *common
         item3:
-          name: "Fiber/Rope"
+          name: "Rope"
           <<: *common
         item4:
-          name: "Fiber/String"
+          name: "String"
           <<: *low
     item4:
+      name: "Goo"
       <<: *low
       subtable:
         item1:
@@ -436,21 +447,23 @@ theme:
       name: "Substrate"
       <<: *low
     item4:
+      name: "Insect"
       <<: *low
       subtable:
         item1:
-          name: "Insect/Hymenoptera"
+          name: "Hymenoptera"
           <<: *common
         item2:
-          name: "Insect/Lepidoptera"
+          name: "Lepidoptera"
           <<: *common
         item3:
-          name: "Insect/Coleoptera"
+          name: "Coleoptera"
           <<: *common
         item4:
-          name: "Insect/Diptera"
+          name: "Diptera"
           <<: *low
     item5:
+      name: "Mammal"
       <<: *low
       subtable:
         item1:
@@ -481,6 +494,7 @@ theme:
       name: "Attack"
       <<: *low
     item7:
+      name: "Reptile"
       <<: *low
       subtable:
         item1:
@@ -499,6 +513,7 @@ theme:
           name: "Aves"
           <<: *common
     item8:
+      name: "Plant"
       <<: *low
       subtable:
         item1:
@@ -529,6 +544,7 @@ theme:
           name: "Flowering"
           <<: *common
     item9:
+      name: "Aquatic"
       <<: *low
       subtable:
         item1:
@@ -577,6 +593,7 @@ theme:
           name: "Osteichthyes"
           <<: *common
     item10:
+      name: "Fungus"
       <<: *low
       subtable:
         item1:
@@ -604,52 +621,54 @@ theme:
       <<: *low
       <<: *reroll_once
     item12:
+      name: "Detachable"
       <<: *low
       subtable:
         item1:
-          name: "Detachable/Removable"
+          name: "Removable"
           <<: *common
         item2:
-          name: "Detachable/Shedding"
+          name: "Shedding"
           <<: *common
         item3:
-          name: "Detachable/Budding"
+          name: "Budding"
           <<: *common
         item4:
-          name: "Detachable/Split"
+          name: "Split"
           <<: *low
     item13:
+      name: "Injury"
       <<: *low
       subtable:
         item1:
-          name: "Injury/Scratch"
+          name: "Scratch"
           <<: *common
         item2:
-          name: "Injury/Scar"
+          name: "Scar"
           <<: *common
         item3:
-          name: "Injury/Break"
+          name: "Break"
           <<: *common
         item4:
-          name: "Injury/Scrape"
+          name: "Scrape"
           <<: *common
         item5:
-          name: "Injury/Bruise"
+          name: "Bruise"
           <<: *common
         item6:
-          name: "Injury/Gash"
+          name: "Gash"
           <<: *low
         item7:
-          name: "Injury/Loss"
+          name: "Loss"
           <<: *low
         item8:
-          name: "Injury/Amputation"
+          name: "Amputation"
           <<: *low
         item9:
-          name: "Injury/Replacement"
+          name: "Replacement"
           <<: *tiny
         item10:
-          name: "Injury/Graft"
+          name: "Graft"
           <<: *tiny
     item14:
       name: "Fragmented"
@@ -720,115 +739,120 @@ theme:
 focus:
   minor: &focus_minor
     item1:
+      name: "Limbs"
       <<: *common
       subtable:
         item1:
-          name: "Limbs/All"
+          name: "All"
           <<: *common
         item2:
-          name: "Limbs/Hands"
+          name: "Hands"
           <<: *low
         item3:
-          name: "Limbs/Feet"
+          name: "Feet"
           <<: *low
         item4:
-          name: "Limbs/Arms"
+          name: "Arms"
           <<: *low
         item5:
-          name: "Limbs/Legs"
+          name: "Legs"
           <<: *low
         item6:
-          name: "Limbs/Wings (if present)"
+          name: "Wings (if present)"
           <<: *low
         item7:
-          name: "Limbs/Tail (if present)"
+          name: "Tail (if present)"
           <<: *low
     item2:
+      name: "Head"
       <<: *common
       subtable:
         item1:
-          name: "Head/All"
+          name: "All"
           <<: *common
         item3:
-          name: "Head/Back"
+          name: "Back"
           <<: *common
         item4:
-          name: "Head/Neck"
+          name: "Neck"
           <<: *common
         item5:
+          name: "Face"
           <<: *common
           subtable:
             item1:
-              name: "Head/Face/All"
+              name: "All"
               <<: *common
             item2:
-              name: "Head/Face/Eyes"
+              name: "Eyes"
               <<: *low
             item3:
-              name: "Head/Face/Nose"
+              name: "Nose"
               <<: *low
             item4:
-              name: "Head/Face/Cheeks"
+              name: "Cheeks"
               <<: *low
             item5:
-              name: "Head/Face/Mouth"
+              name: "Mouth"
               <<: *low
             item6:
-              name: "Head/Face/Jaw"
+              name: "Jaw"
               <<: *low
             item7:
-              name: "Head/Face/Tongue"
+              name: "Tongue"
               <<: *low
         item6:
-          name: "Head/Ears"
+          name: "Ears"
           <<: *common
     item3:
+      name: "Torso"
       <<: *common
       subtable:
         item1:
-          name: "Torso/All"
+          name: "All"
           <<: *common
         item2:
-          name: "Torso/Spine"
+          name: "Spine"
           <<: *low
         item3:
-          name: "Torso/Shoulders"
+          name: "Shoulders"
           <<: *low
         item4:
-          name: "Torso/Collar"
+          name: "Collar"
           <<: *low
         item5:
-          name: "Torso/Sides"
+          name: "Sides"
           <<: *low
         item6:
-          name: "Torso/Stomach"
+          name: "Stomach"
           <<: *low
         item7:
-          name: "Torso/Chest"
+          name: "Chest"
           <<: *low
         item8:
-          name: "Torso/Hips"
+          name: "Hips"
           <<: *low
         item9:
-          name: "Torso/Crotch and Butt"
+          name: "Crotch and Butt"
           <<: *low
     item4:
+      name: "System"
       <<: *common
       subtable: &system
         item1:
-          name: "System/Digestive"
+          name: "Digestive"
           <<: *common
         item2:
-          name: "System/Reproductive"
+          name: "Reproductive"
           <<: *low
         item3:
-          name: "System/Circulatory"
+          name: "Circulatory"
           <<: *common
         item4:
-          name: "System/Immune"
+          name: "Immune"
           <<: *low
         item5:
-          name: "System/Sensory"
+          name: "Sensory"
           <<: *common
   moderate: &focus_moderate
     item1:
@@ -858,6 +882,7 @@ focus:
       name: "Tail"
       <<: *common
     item9:
+      name: "System"
       <<: *common
       subtable:
         <<: *system

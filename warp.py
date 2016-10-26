@@ -58,7 +58,7 @@ def find_answer(raw_dict, dictionary, level=-1, sub=False):
 	for k,v in d.items():
 		num += v.get('freq')
 		if num >= rand:
-			if 'name' in v:
+			if 'name' in v and not 'subtable' in v:
 				if 'roll' in v and not 'other' in v:
 					subs = ''
 					for i in range(0,v.get('roll')):
@@ -82,7 +82,7 @@ def find_answer(raw_dict, dictionary, level=-1, sub=False):
 			elif v.get('move') == 'down' and level > 0:
 				return find_answer(raw_dict,dictionary,level-1)
 			elif 'subtable' in v:
-				return find_answer(raw_dict,dictionary,-1,v.get('subtable'))
+				return '{}/{}'.format(v.get('name'),find_answer(raw_dict,dictionary,-1,v.get('subtable')))
 			else:
 				return 'Panic at the Disco!'
 
